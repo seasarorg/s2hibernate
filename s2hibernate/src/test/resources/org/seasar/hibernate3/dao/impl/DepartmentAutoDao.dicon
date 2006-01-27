@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container//EN"
+"http://www.seasar.org/dtd/components.dtd">
+<components>
+    <include path="s2hibernate.dicon"/>
+
+    <component class="org.seasar.hibernate3.dao.DepartmentAutoDao">
+        <aspect>j2ee.requiredTx</aspect>
+        <aspect>s2hibernate.interceptor</aspect>
+    </component>
+</components>

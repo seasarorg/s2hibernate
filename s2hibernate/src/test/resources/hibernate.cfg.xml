@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="show_sql">true</property>
+
+        <mapping resource="org/seasar/hibernate3/entity/Employee.hbm.xml"/>
+        <mapping resource="org/seasar/hibernate3/entity/Department.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

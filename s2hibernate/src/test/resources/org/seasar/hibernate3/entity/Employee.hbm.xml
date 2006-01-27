@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field">
+    <class name="org.seasar.hibernate3.entity.Employee" table="EMP">
+        <id name="empno" column="EMPNO" type="integer">
+            <generator class="assigned"/>
+        </id>
+        <property name="ename" column="ENAME" type="string" length="10"/>
+        <property name="job" column="JOB" type="string" length="9"/>
+        <property name="mgr" column="MGR" type="short" length="4"/>
+        <property name="hiredate" column="HIREDATE" type="timestamp"/>
+        <property name="sal" column="SAL" type="big_decimal" length="7"/>
+        <property name="comm" column="COMM" type="float" length="7"/>
+        <property name="deptno" column="DEPTNO" type="int" length="2"/>
+    </class>
+
+    <query name="org.seasar.hibernate3.dao.EmployeeAutoDao_getEmployeeByJob"><![CDATA[
+        from Employee emp 
+            where emp.job = :job
+            order by emp.empno desc
+    ]]></query>
+    
+    <query name="org.seasar.hibernate3.dao.EmployeeAutoDao_getNamedQueryEmployeeNameById"><![CDATA[
+        select emp.ename from Employee emp where emp.empno = :employeeId
+    ]]></query>
+
+    <query name="getNamedQueryEmployeeIdByName"><![CDATA[
+        select emp.empno from Employee emp where emp.ename = :employeeName
+    ]]></query>
+    
+    <query name="getEmployeeBySalDto"><![CDATA[
+        from Employee emp where emp.sal > :fromSal and emp.sal < :toSal
+    ]]></query>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<project name="s2-hibernate" default="dist" basedir=".">
+	<property name="ver" value="1.2.0-SNAPSHOT"/>
+
+	<target name="dist">
+		<zip zipfile="target/S2Hibernate-${ver}.zip">
+			<zipfileset prefix="s2hibernate" dir=".">
+				<exclude name="**/target/**"/>
+				<exclude name="**/.settings/**"/>
+				<exclude name="**/build/**"/>
+			</zipfileset>
+			<zipfileset prefix="s2hibernate/lib" dir="target">
+				<include name="s2-hibernate-${version}.jar"/>
+			</zipfileset>
+			<zipfileset prefix="s2hibernate/resources" dir="src/test/resources">
+				<include name="j2ee.dicon"/>
+				<include name="s2hibernate.dicon"/>
+				<include name="hibernate.cfg.xml"/>
+				<include name="log4j.properties"/>
+			</zipfileset>
+			<zipfileset prefix="s2hibernate/doc" dir="../s2hibernate-www">
+				<exclude name="**/download/**"/>
+				<exclude name=".project"/>
+			</zipfileset>
+		</zip>
+	</target>
+</project>
+
