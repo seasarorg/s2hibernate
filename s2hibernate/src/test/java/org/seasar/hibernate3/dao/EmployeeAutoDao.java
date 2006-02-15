@@ -27,7 +27,7 @@ public interface EmployeeAutoDao {
 
     public Class BEAN = Employee.class;
 
-    // ’Ç‰ÁAíœAXVA•Û‘¶orXV‚ğ‚·‚éê‡
+    // è¿½åŠ ã€å‰Šé™¤ã€æ›´æ–°ã€ä¿å­˜oræ›´æ–°ã‚’ã™ã‚‹å ´åˆ
     public void save(Employee employee);
 
     public void delete(Employee employee);
@@ -36,15 +36,15 @@ public interface EmployeeAutoDao {
 
     public void saveOrUpdate(Employee employee);
 
-    // ƒIƒuƒWƒFƒNƒg‚Ìæ“¾
+    // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å–å¾—
     public Employee load(Integer empno);
 
-    // ƒIƒuƒWƒFƒNƒg‚ğƒƒbƒN‚ğ‚©‚¯‚Äæ“¾
+    // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ãƒ­ãƒƒã‚¯ã‚’ã‹ã‘ã¦å–å¾—
     public String loadLock_LOCK = "UPGRADE";
 
     public Employee loadLock(Integer empno);
 
-    // HQL‚ğw’è‚µ‚È‚¢‚ÅÀs‚·‚éê‡
+    // HQLã‚’æŒ‡å®šã—ãªã„ã§å®Ÿè¡Œã™ã‚‹å ´åˆ
     public String getEmployeeByEmpNo_ARGS = "empno";
 
     public Employee getEmployeeByEmpNo(Integer empNo);
@@ -53,105 +53,105 @@ public interface EmployeeAutoDao {
 
     public List getEmployeeByJobDeptno(String job, int deptno);
 
-    // HQL‚ğw’è‚µ‚ÄÀs‚·‚éê‡
+    // HQLã‚’æŒ‡å®šã—ã¦å®Ÿè¡Œã™ã‚‹å ´åˆ
     public String getHQLAllEmployee_HQL = "from Employee emp order by emp.empno";
 
     public List getHQLAllEmployee();
 
-    // ‰½‚àw’è‚µ‚Ä‚¢‚È‚¢ê‡
+    // ä½•ã‚‚æŒ‡å®šã—ã¦ã„ãªã„å ´åˆ
     public List getAllEmployee();
 
-    // firstResult,maxResults‚ğw’è‚·‚éê‡
+    // firstResult,maxResultsã‚’æŒ‡å®šã™ã‚‹å ´åˆ
     public String getEmployeeList_ARGS = "firstResult,maxResults";
     public String getEmployeeList_HQL = "from Employee emp order by emp.empno";
 
     public List getEmployeeList(int firstResult, int MaxResults);
 
-    // –ß‚è’l‚ªint‚Ìê‡
+    // æˆ»ã‚Šå€¤ãŒintã®å ´åˆ
     public String getEmployeeCount_HQL = "select count(emp) from Employee emp";
 
     public int getEmployeeCount();
 
-    // –ß‚è’l‚ªString‚Ìê‡
+    // æˆ»ã‚Šå€¤ãŒStringã®å ´åˆ
     public String getEmployeeNameById_HQL = "select emp.ename from Employee emp where empno = :employeeId ";
     public String getEmployeeNameById_ARGS = "employeeId";
 
     public String getEmployeeNameById(Integer employeeId);
 
-    // NamedQueryŒÄ‚Ño‚µ‚ğg‚¤ê‡
-    // (Employee.hbm.xml‚Ì"org.seasar.hibernate3.dao.EmployeeAutoDao_getEmployeeByJob"‚É‘Î‰)
+    // NamedQueryå‘¼ã³å‡ºã—ã‚’ä½¿ã†å ´åˆ
+    // (Employee.hbm.xmlã®"org.seasar.hibernate3.dao.EmployeeAutoDao_getEmployeeByJob"ã«å¯¾å¿œ)
     public String getEmployeeByJob_ARGS = "job";
 
     public List getEmployeeByJob(String job);
 
-    // NamedQuery‚Å–ß‚è’l‚ªString‚É‚È‚é‚æ‚¤‚ÈSQL•¶‚ğg‚¤ê‡
-    // (Employee.hbm.xml‚Ì"org.seasar.hibernate3.dao.EmployeeAutoDao_getNamedQueryEmployeeNameById"‚É‘Î‰)
+    // NamedQueryã§æˆ»ã‚Šå€¤ãŒStringã«ãªã‚‹ã‚ˆã†ãªSQLæ–‡ã‚’ä½¿ã†å ´åˆ
+    // (Employee.hbm.xmlã®"org.seasar.hibernate3.dao.EmployeeAutoDao_getNamedQueryEmployeeNameById"ã«å¯¾å¿œ)
     public String getNamedQueryEmployeeNameById_ARGS = "employeeId";
 
     public String getNamedQueryEmployeeNameById(Integer employeeId);
 
-    // NamedQuery‚Å–ß‚è’l‚ªLong‚É‚È‚é‚æ‚¤‚ÈSQL•¶‚ğg‚¤ê‡
-    // (Employee.hbm.xml‚Ì"getNamedQueryEmployeeIdByName"NamedQuery‚ğÀs)
+    // NamedQueryã§æˆ»ã‚Šå€¤ãŒLongã«ãªã‚‹ã‚ˆã†ãªSQLæ–‡ã‚’ä½¿ã†å ´åˆ
+    // (Employee.hbm.xmlã®"getNamedQueryEmployeeIdByName"NamedQueryã‚’å®Ÿè¡Œ)
     public String getNamedQueryEmployeeIdByName_ARGS = "employeeName";
 
     public Integer getNamedQueryEmployeeIdByName(String employeeName);
 
-    // ˆø”‚ÉList‚ğ‚µ‚Ä‚¢‚·‚éê‡
+    // å¼•æ•°ã«Listã‚’ã—ã¦ã„ã™ã‚‹å ´åˆ
     public String getEmployeeByIdList_HQL = "from Employee emp where emp.empno in (:empnoList)";
     public String getEmployeeByIdList_ARGS = "empnoList";
 
     public List getEmployeeByIdList(List empnoList);
 
-    // OrderBy‚ÌƒtƒB[ƒ‹ƒh‚ğw’è‚·‚éê‡
+    // OrderByã®ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’æŒ‡å®šã™ã‚‹å ´åˆ
     public String getEmployeeOrderByField_ARGS = "orderBy";
 
     public List getEmployeeOrderByField(String orderBy);
 
-    // ARGSƒAƒmƒe[ƒVƒ‡ƒ“‚É”äŠrƒIƒyƒŒ[ƒ^[i>j‚ğw’è‚µ‚½ê‡
+    // ARGSã‚¢ãƒãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã«æ¯”è¼ƒã‚ªãƒšãƒ¬ãƒ¼ã‚¿ãƒ¼ï¼ˆ>ï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆ
     public String getEmployeeByGtSal_ARGS = "sal >";
 
     public List getEmployeeByGtSal(BigDecimal sal);
 
-    // ARGSƒAƒmƒe[ƒVƒ‡ƒ“‚É”äŠrƒIƒyƒŒ[ƒ^[i<j‚ğw’è‚µ‚½ê‡
+    // ARGSã‚¢ãƒãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã«æ¯”è¼ƒã‚ªãƒšãƒ¬ãƒ¼ã‚¿ãƒ¼ï¼ˆ<ï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆ
     public String getEmployeeByLtSal_ARGS = "sal <";
 
     public List getEmployeeByLtSal(BigDecimal sal);
 
-    // ARGSƒAƒmƒe[ƒVƒ‡ƒ“‚É”äŠrƒIƒyƒŒ[ƒ^[i>,<j‚ğw’è‚µ‚½ê‡
-    // w’è‚µ‚½ƒtƒB[ƒ‹ƒh‚ªw’è‚µ‚½”ÍˆÍ‚Ì’l‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚½‚¢‚Æ‚«
+    // ARGSã‚¢ãƒãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã«æ¯”è¼ƒã‚ªãƒšãƒ¬ãƒ¼ã‚¿ãƒ¼ï¼ˆ>,<ï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆ
+    // æŒ‡å®šã—ãŸãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãŒæŒ‡å®šã—ãŸç¯„å›²ã®å€¤ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ãŸã„ã¨ã
     public String getEmployeeByGtLtSal_ARGS = "sal >,sal <";
 
     public List getEmployeeByGtLtSal(BigDecimal BigDecimal, BigDecimal toSal);
 
-    // ARGSƒAƒmƒe[ƒVƒ‡ƒ“‚É”äŠrƒIƒyƒŒ[ƒ^[i=j‚ğw’è‚µ‚½ê‡
+    // ARGSã‚¢ãƒãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã«æ¯”è¼ƒã‚ªãƒšãƒ¬ãƒ¼ã‚¿ãƒ¼ï¼ˆ=ï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆ
     public String getEmployeeByJobDeptnoEq_ARGS = "job =,deptno =";
 
     public List getEmployeeByJobDeptnoEq(String job, int deptno);
 
-    // ARGSƒAƒmƒe[ƒVƒ‡ƒ“‚É”äŠrƒIƒyƒŒ[ƒ^[ilikej‚ğw’è‚µ‚½ê‡
+    // ARGSã‚¢ãƒãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã«æ¯”è¼ƒã‚ªãƒšãƒ¬ãƒ¼ã‚¿ãƒ¼ï¼ˆlikeï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆ
     public String getEmployeeByLikeEmane_ARGS = "ename like";
 
     public List getEmployeeByLikeEmane(String ename);
 
-    // ARGSƒAƒmƒe[ƒVƒ‡ƒ“‚É”äŠrƒIƒyƒŒ[ƒ^[iinj‚ğw’è‚µ‚½ê‡
+    // ARGSã‚¢ãƒãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã«æ¯”è¼ƒã‚ªãƒšãƒ¬ãƒ¼ã‚¿ãƒ¼ï¼ˆinï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆ
     public String getEmployeeByInIdList_ARGS = "empno in";
 
     public List getEmployeeByInIdList(List empnoList);
 
-    // ARGSƒAƒmƒe[ƒVƒ‡ƒ“‚É”äŠrƒIƒyƒŒ[ƒ^[i>=,<=j‚ğw’è‚µ‚½ê‡iEmployeeSearchDtoj
-    // w’è‚µ‚½ƒtƒB[ƒ‹ƒh‚ªw’è‚µ‚½”ÍˆÍ‚Ì’l‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚½‚¢‚Æ‚«
+    // ARGSã‚¢ãƒãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã«æ¯”è¼ƒã‚ªãƒšãƒ¬ãƒ¼ã‚¿ãƒ¼ï¼ˆ>=,<=ï¼‰ã‚’æŒ‡å®šã—ãŸå ´åˆï¼ˆEmployeeSearchDtoï¼‰
+    // æŒ‡å®šã—ãŸãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãŒæŒ‡å®šã—ãŸç¯„å›²ã®å€¤ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ãŸã„ã¨ã
     public String getEmployeeByDto_PROPERTY = "empno,ename,job,mgr,deptno,"
             + "hiredate >= fromHiredate,hiredate <= toHiredate,sal >= fromSal,sal <= toSal";
 
     public List getEmployeeByDto(EmployeeSearchDto dto);
 
-    // dto‚Æ‚µ‚ÄEmployee‚ğw’è‚µ‚Äˆ—‚·‚éê‡
+    // dtoã¨ã—ã¦Employeeã‚’æŒ‡å®šã—ã¦å‡¦ç†ã™ã‚‹å ´åˆ
     public List getEmployeeByEmployeeDtoAuto(Employee dto);
 
-    // dto‚Æ‚µ‚ÄEmployeeSimpleDto‚ğw’è‚µ‚Äˆ—‚·‚éê‡
+    // dtoã¨ã—ã¦EmployeeSimpleDtoã‚’æŒ‡å®šã—ã¦å‡¦ç†ã™ã‚‹å ´åˆ
     public List getEmployeeByEmployeeSimpleDtoAuto(EmployeeSimpleDto dto);
 
-    // Dto‚Ì’l‚ğHQL‚É“n‚µ‚ÄÀs‚·‚éê‡
+    // Dtoã®å€¤ã‚’HQLã«æ¸¡ã—ã¦å®Ÿè¡Œã™ã‚‹å ´åˆ
 
     public String getEmployeeBySalDto_PROPERTY = "fromSal,toSal";
 
