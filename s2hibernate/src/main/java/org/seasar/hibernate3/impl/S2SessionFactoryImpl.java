@@ -1,5 +1,5 @@
 /*
- * Copyright 2004-2007 the Seasar Foundation and the Others.
+ * Copyright 2004-2009 the Seasar Foundation and the Others.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,8 @@ import org.seasar.hibernate3.S2SessionFactory;
 
 /**
  * @author higa
- * @author koichik‚³‚ñ
- * @author ‚¤‚ç‚à‚Æ‚³‚ñ
+ * @author koichikï¿½ï¿½ï¿½ï¿½
+ * @author ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½
  * @author kenichi_okazaki
  */
 public final class S2SessionFactoryImpl implements S2SessionFactory {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2004-2007 the Seasar Foundation and the Others.
+ * Copyright 2004-2009 the Seasar Foundation and the Others.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ public interface DepartmentAutoDao {
     // load
     public Department load(short empno);
 
-    // ˆø”‚ÉList‚ğ‚µ‚Ä‚¢‚·‚éê‡
+    // ï¿½ï¿½ï¿½Listï¿½âµ‚Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
     public String getDepartmentByDeptno_ARGS = "deptno";
     public String getDepartmentByDeptno_EAGER = "employee";
 
